@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14962951339230" configfile="/myFoodStore/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" id="pf14977570992830" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf14977570992851 pf14977570992852 pf14977570992853 pf14977570992854 pf14977570992855 pf14977570992856 pf14977570992857 pf14977570992858 pf14977570992859 pf149775709928510 pf149775709928511 pf149775709928512 pf149775709928513 pf149775709928514" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf149775709928515" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14977570992851" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="consumer.xhtml" id="pf149775709928516" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14977570992852" path="/consumer.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="myFoodStore/consumer/updateConsumer.xhtml" id="pf149775709928617" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14977570992853" path="/consumer/updataConsumer.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="myFoodStore/consumer/addConsumer.xhtml" id="pf149775709928618" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14977570992854" path="/consumer/addConsumer.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="myFoodStore/consumer/editConsumer.xhtml" id="pf149775709928619" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf14977570992855" path="/consumer/editConsumer.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="food.xhtml" id="pf149775709928620" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" inlinks="pf14977570992856" path="/food.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="myFoodStore/food/updateFood.xhtml" id="pf149775709928621" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" inlinks="pf14977570992857" path="/food/updataFood.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="myFoodStore/food/addFood.xhtml" id="pf149775709928622" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" inlinks="pf14977570992858" path="/food/addFood.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="myFoodStore/food/editFood.xhtml" id="pf149775709928623" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" inlinks="pf14977570992859" path="/food/editFood.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="seller.xhtml" id="pf149775709928624" referenceLink="//@navigationRule.9/@navigationCase.0/@toViewId|" inlinks="pf149775709928510" path="/seller.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="myFoodStore/seller/updateSeller.xhtml" id="pf149775709928625" referenceLink="//@navigationRule.10/@navigationCase.0/@toViewId|" inlinks="pf149775709928511" path="/seller/updataSeller.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="myFoodStore/seller/addSeller.xhtml" id="pf149775709928626" referenceLink="//@navigationRule.11/@navigationCase.0/@toViewId|" inlinks="pf149775709928512" path="/seller/addSeller.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="myFoodStore/seller/editSeller.xhtml" id="pf149775709928627" referenceLink="//@navigationRule.12/@navigationCase.0/@toViewId|" inlinks="pf149775709928513" path="/seller/editSeller.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="adminPage.xhtml" id="pf149775709928628" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" inlinks="pf149775709928514" path="/adminPage.xhtml"/>
+  <links id="pf14977570992851" target="pf149775709928515" source="pf14977570992830" outcome="index" redirect="true"/>
+  <links id="pf14977570992852" target="pf149775709928516" source="pf14977570992830" outcome="consumer" redirect="true"/>
+  <links id="pf14977570992853" target="pf149775709928617" source="pf14977570992830" outcome="updataConsumer" redirect="true"/>
+  <links id="pf14977570992854" target="pf149775709928618" source="pf14977570992830" outcome="addConsumer" redirect="true"/>
+  <links id="pf14977570992855" target="pf149775709928619" source="pf14977570992830" outcome="editConsumer" redirect="true"/>
+  <links id="pf14977570992856" target="pf149775709928620" source="pf14977570992830" outcome="food" redirect="true"/>
+  <links id="pf14977570992857" target="pf149775709928621" source="pf14977570992830" outcome="updataFood" redirect="true"/>
+  <links id="pf14977570992858" target="pf149775709928622" source="pf14977570992830" outcome="addFood" redirect="true"/>
+  <links id="pf14977570992859" target="pf149775709928623" source="pf14977570992830" outcome="editFood" redirect="true"/>
+  <links id="pf149775709928510" target="pf149775709928624" source="pf14977570992830" outcome="seller" redirect="true"/>
+  <links id="pf149775709928511" target="pf149775709928625" source="pf14977570992830" outcome="updataSeller" redirect="true"/>
+  <links id="pf149775709928512" target="pf149775709928626" source="pf14977570992830" outcome="addSeller" redirect="true"/>
+  <links id="pf149775709928513" target="pf149775709928627" source="pf14977570992830" outcome="editSeller" redirect="true"/>
+  <links id="pf149775709928514" target="pf149775709928628" source="pf14977570992830" outcome="adminPage" redirect="true"/>
+</pageflow:Pageflow>

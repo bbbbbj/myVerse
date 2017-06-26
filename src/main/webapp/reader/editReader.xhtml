@@ -1,0 +1,61 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/templates/template.xhtml">
+	<ui:define name="title">读者信息</ui:define>
+	<!-- 因为和模板不在同一个目录下，所以不能直接使用，要么使用绝对路径，要么向上级目录跳转../ -->
+	<ui:define name="menuItem">
+		<ui:include src="../templates/readerMenuItem.xhtml"></ui:include>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:dataTable value="#{findReader.allReaders}" var="consumer">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="姓名 "></h:outputText>
+					</f:facet>
+					<h:outputText value="#{reader.name}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="地址"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{reader.place}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="性别 "></h:outputText>
+					</f:facet>
+					<h:outputText value="#{reader.gender}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="简介 "></h:outputText>
+					</f:facet>
+					<h:outputText value="#{reader.line}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="电话 "></h:outputText>
+					</f:facet>
+					<h:outputText value="#{reader.tel}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="断句"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{reader.num}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="编辑 "></h:outputText>
+					</f:facet>
+					<h:commandButton action="#{findReader.editReader(reader)}" value="编辑"></h:commandButton>
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+

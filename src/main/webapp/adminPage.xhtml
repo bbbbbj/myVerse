@@ -1,0 +1,164 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="templates/template.xhtml" xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+
+	<ui:define name="title">首页</ui:define>
+	<ui:define name="content">
+
+		<p:growl id="growl" showDetail="true" />
+		<p:tabView dynamic="true" cache="true" rendered="#{userBean.admin}">
+			<p:tab title="读者信息">
+				<h:form>
+					<p:dataTable value="#{findReader.allReaders}" var="reader" id="data">
+						<f:facet name="header">编辑读者信息</f:facet>
+						<!-- 
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="顾客头像图片 "></h:outputText>
+							</f:facet>
+							<p:graphicImage id="img" value="#{readerImageView.img}" alt="无法显示"
+								width="100" height="100">
+								<f:param name="read" value="#{reader.id}"></f:param>
+							</p:graphicImage>
+						</p:column>
+						 -->
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="姓名 "></h:outputText>
+							</f:facet>
+							<h:outputText value="#{reader.name}"></h:outputText>
+						</p:column>
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="地址 "></h:outputText>
+							</f:facet>
+							<h:outputText value="#{reader.place}"></h:outputText>
+						</p:column>
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="性别 "></h:outputText>
+							</f:facet>
+							<h:outputText value="#{reader.gender}"></h:outputText>
+						</p:column>
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="诗句 "></h:outputText>
+							</f:facet>
+							<h:outputText value="#{reader.line}"></h:outputText>
+						</p:column>
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="操作 "></h:outputText>
+							</f:facet>
+							<p:commandButton action="#{findReader.editReader(reader)}" value="编辑" />
+							<p:commandButton action="#{delReader.delReader(reader)}" value="删除"
+								update="data" />
+
+						</p:column>
+					</p:dataTable>
+				</h:form>
+			</p:tab>
+			<p:tab title="诗句信息">
+				<h:form>
+					<p:dataTable value="#{findline.allLines}" var="line" id="linedata">
+						<f:facet name="header">编辑诗句信息</f:facet>
+						
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="诗句 "></h:outputText>
+							</f:facet>
+							<h:outputText value="#{line.name}"></h:outputText>
+						</p:column>
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="断句 "></h:outputText>
+							</f:facet>
+							<h:outputText value="#{line.verseLine}"></h:outputText>
+						</p:column>
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="操作 "></h:outputText>
+							</f:facet>
+							<p:commandButton action="#{findLine.editLine(line)}" value="编辑" />
+							<p:commandButton action="#{delLine.delLine(line)}" value="删除"
+								update="linedata" />
+
+						</p:column>
+					</p:dataTable>
+				</h:form>
+			</p:tab>
+			
+			<p:tab title="诗人信息">
+				<h:form>
+					<p:dataTable value="#{findPoet.allPoets}" var="poet"
+						id="poetdata">
+						<f:facet name="header">编辑诗人信息</f:facet>
+						
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="诗句"></h:outputText>
+							</f:facet>
+							<h:outputText value="#{poet.name}"></h:outputText>
+						</p:column>
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="断句 "></h:outputText>
+							</f:facet>
+							<h:outputText value="#{poet.title}"></h:outputText>
+						</p:column>
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="朝代 "></h:outputText>
+							</f:facet>
+							<h:outputText value="#{poet.dynasty}"></h:outputText>
+						</p:column>
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="风格 "></h:outputText>
+							</f:facet>
+							<h:outputText value="#{poet.hobby}"></h:outputText>
+						</p:column>
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="操作 "></h:outputText>
+							</f:facet>
+							<p:commandButton action="#{findPoet.editPoet(poet)}"
+								value="编辑" />
+							<p:commandButton action="#{delPoet.delPoet(poet)}"
+								value="删除" update="poetdata" />
+
+						</p:column>
+					</p:dataTable>
+				</h:form>
+			</p:tab>
+		</p:tabView>
+		<h:form rendered="#{userBean.admin}">
+			<p:toolbar>
+				<f:facet name="left">
+					<p:menuButton value="读者">
+						<p:menuitem value="增加" action="addReader"
+							icon="ui-icon-disk" />
+					</p:menuButton>
+					<p:menuButton value="诗句">
+						<p:menuitem value="增加" action="addLine"
+							icon="ui-icon-disk" />
+					</p:menuButton>
+					
+					<p:menuButton value="诗人">
+						<p:menuitem value="增加" action="addPoet"
+							icon="ui-icon-disk" />
+					</p:menuButton>
+				</f:facet>
+
+			</p:toolbar>
+		</h:form>
+		<p:dialog visible = "#{not userBean.admin}" draggable= "false" resizable= "false" modal="true" closable="false">
+		只有管理员才有资格访问该页面！<p:button value = "确定" outcome="index"/>
+		</p:dialog>
+	</ui:define>
+</ui:composition>
+

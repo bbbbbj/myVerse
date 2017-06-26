@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	
+  <persistence-unit name="javaeelocal" transaction-type="JTA">
+    <class>verse.entity.Reader</class>
+    <class>verse.entity.Line</class>
+    <class>verse.entity.Poet</class>
+    <class>verse.entity.Uzer</class>
+    
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver" />
+      <property name="eclipselink.target-database" value="Derby" />
+      <property name="javax.persistence.jdbc.url"
+        value="jdbc:derby://localhost:1527/myVerse;create=true" />
+      <property name="javax.persistence.jdbc.user" value="yhs" />
+      <property name="javax.persistence.jdbc.password" value="yhs" />
+
+      <property name="eclipselink.ddl-generation" value="create-tables" />
+      <property name="eclipselink.ddl-generation.output-mode"
+        value="database" />
+    </properties>
+    
+
+  </persistence-unit>
+</persistence>

@@ -1,0 +1,50 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="../templates/template.xhtml">
+	<ui:define name="title">诗人信息</ui:define>
+
+	<ui:define name="menuItem">
+		<ui:include src="/templates/poetMenuItem.xhtml"></ui:include>
+	</ui:define>
+<!-- 对于按钮，必须在form标签内 -->
+	<ui:define name="content">
+		<h:form>
+			<h:dataTable value="#{findPoet.allPoets}" var="poet">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="诗人 "></h:outputText>
+					</f:facet>
+					<h:outputText value="#{poet.name}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="朝代 "></h:outputText>
+					</f:facet>
+					<h:outputText value="#{poet.dynasty}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="数量 "></h:outputText>
+					</f:facet>
+					<h:outputText value="#{poet.title}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="风格 "></h:outputText>
+					</f:facet>
+					<h:outputText value="#{poet.hobby}"></h:outputText>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="删除 "></h:outputText>
+					</f:facet>
+					<h:commandButton action="#{delPoet.delPoet(poet)}" value="删除"></h:commandButton>
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+

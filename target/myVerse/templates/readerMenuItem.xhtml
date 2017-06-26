@@ -1,0 +1,18 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" >
+	<h3>
+		<h:panelGrid columns = "3">
+			<h:outputLink value = "/myVerse/reader/editReader.xhtml">
+			<h:outputText value = "修改读者信息"></h:outputText>
+			</h:outputLink>
+			<h:outputLink value = "/myVerse/reader/addReader.xhtml">
+			<h:outputText value = "增加读者信息"></h:outputText>
+			</h:outputLink>
+			<h:outputLink value = "/myVerse/reader/delReader.xhtml">
+			<h:outputText value = "删除读者信息"></h:outputText>
+			</h:outputLink>
+		</h:panelGrid>
+	</h3>
+</ui:composition>

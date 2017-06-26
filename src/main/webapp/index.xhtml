@@ -1,0 +1,107 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="templates/template.xhtml" xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<ui:define name = "title">首页</ui:define>	
+<ui:define name = "content">
+	<p:panel header="鲨鱼辣椒无情对集句系统"
+			style="margin:20px 1px;background-color:#c2cab3 ;height : 300px" >
+			<p:layout style="min-width:400px;min-height:230px;">
+				<p:layoutUnit position="west" resizable="true" size="1000"
+					minSize="400" maxSize="1000" style="color:#d35c6f;">
+	<h:outputText value = "主要功能：实现对诗句、诗人和读者的查看，增加，删除，更改"></h:outputText><br/>
+	<h:outputText value = "班级：电商1402"></h:outputText><br/>
+	<h:outputText value = "学号：1405230216"></h:outputText><br/>
+	<h:outputText value = "姓名：杨慧思"></h:outputText><br/>
+	</p:layoutUnit>
+				<p:layoutUnit position="center"><!--input 应该是value属性而不是action属性！！  -->	
+					<h:form rendered="#{not userBean.login}">
+						<p:panelGrid columns="2" >
+							<f:facet name="header">
+							用户登录
+							</f:facet>
+							<p:outputLabel for="username" value="用户名" />
+							<p:inputText id="username" required="true" value = "#{userBean.userName}"><f:validateRegex pattern="[a-zA-Z0-9]{2,9}" /></p:inputText>			
+							<p:outputLabel for="pwd" value="密码" />
+							<p:password id = "pwd" required="true" value = "#{userBean.password}"><f:validateRegex pattern="[a-zA-Z0-9]{2,9}" /></p:password>
+							<h:commandButton value="登录" actionListener = "#{userBean.checkUser}"></h:commandButton>
+							<p:commandButton value="重置" type="reset"></p:commandButton>
+						新用户：
+						<p:commandButton value="注册" type="button"
+								onclick="PF('dlg1').show();"></p:commandButton>
+						</p:panelGrid>
+					</h:form>
+					
+					<h:form>				
+					<p:panelGrid columns="2" rendered="#{userBean.login}">
+							<f:facet name="header">
+							用户中心
+							</f:facet>
+							<p:outputLabel for="username" value="用户名" />
+							<h:outputText id="username" value = "#{userBean.userName}"/>
+							<p:outputLabel for="type" value="用户类型" />
+							<h:outputText id="type" value = "#{userBean.type}"/>			
+							<h:commandButton value="注销" actionListener = "#{userBean.logout}"></h:commandButton>
+							<p:commandButton value="修改信息" action = "/adminPage.xhtml" rendered="#{userBean.admin}"></p:commandButton>
+					</p:panelGrid> 
+					</h:form>
+					
+					<p:dialog header="新用户注册" widgetVar="dlg1" showEffect="explode"
+						hideEffect="explode" height="200" fitViewport="true" appendToBody="true">
+						<h:form>
+						<p:growl id="growl" showDetail="true"/>
+							<h:panelGrid columns="2" columnClasses="label,value">
+								<p:outputLabel for="un" value="用户名" />
+								<p:inputText id="un" value="#{addUser.userName}" required = "true"><f:validateRegex pattern="[a-zA-Z0-9]{2,9}" /></p:inputText>
+								<p:outputLabel for="pw1" value="密码" />
+								<p:password id = "pw1" required="true" value="#{addUser.password}" feedback="true" match="pw2"><f:validateRegex pattern="[a-zA-Z0-9]{2,9}" /></p:password>
+								<p:outputLabel for="pw2" value="确认密码" />
+								<p:password id = "pw2" required="true" value="#{addUser.password}" feedback="true"><f:validateRegex pattern="[a-zA-Z0-9]{2,9}" /></p:password>
+								<p:outputLabel for="type" value="用户类别" />
+								<p:selectOneRadio id="type" value="#{addUser.type}">
+									<f:selectItem itemLabel="普通用户" itemValue="普通用户" />
+									<f:selectItem itemLabel="管理员" itemValue="管理员" />
+								</p:selectOneRadio>
+								<h:commandButton value="注册" action="#{addUser.addUser}"
+									onclick="PF('dlg1').hide();" class="ui-button-text ui-c"></h:commandButton>
+								<p:commandButton value="重置" type="reset"></p:commandButton>
+							</h:panelGrid>							
+						</h:form>
+					</p:dialog>
+					
+				</p:layoutUnit>
+			</p:layout>
+		</p:panel>
+
+		<p:panel header="热门诗词"
+			style="margin:20px 1px;background-color:#c2cab3;font-color : #d35c6f">
+			<!-- 
+			<p:ring id="custom" value="#{findLine.allLines}" var="line"
+				styleClass="image-ring" easing="swing">
+				<p:graphicImage id="img" value="#{lineImageView.img}" alt="无法显示"
+					width="270" height="270">
+					<f:param name="line" value="#{line.id}"></f:param>
+				</p:graphicImage>
+			</p:ring>
+			 -->
+			 <p:layout style="min-width:400px;min-height:230px;">
+				<p:layoutUnit position="west" resizable="true" size="500"
+					minSize="400" maxSize="1000">
+					<h:graphicImage url="#{resource['images:jiangchengzi.jpg']}" alt="jiangchengzi" />
+					
+	            </p:layoutUnit>
+	            <p:layoutUnit position="center" resizable="true" size="500"
+					minSize="400" maxSize="1000">
+					<h:graphicImage url="#{resource['images:jiangxue.jpg']}" alt="jiangxue" />
+					</p:layoutUnit>
+					<p:layoutUnit position="east" resizable="true" size="500"
+					minSize="400" maxSize="1000">
+					<h:graphicImage url="#{resource['images:yongmei.jpg']}" alt="yongmei" />
+					</p:layoutUnit>
+	        </p:layout>
+		</p:panel>
+</ui:define>
+</ui:composition>
+

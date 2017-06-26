@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="templates/template.xhtml" xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+	<ui:define name="title">诗句信息</ui:define>
+
+
+	<ui:define name="content">
+		<h:form id="form">
+			<p:carousel value="#{findLine.allLines}" headerText="浏览诗句" var="line"
+				itemStyle="text-align:center;" responsive="true" style="margin:20px 1px; color:#d35c6f;">
+				<p:panelGrid columns="2" style="width:100%;margin:10px 0px;background-color:#c2cab3" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">				<h:outputText value="诗句"></h:outputText>
+				<h:outputText value="#{line.name}"></h:outputText>
+				
+				<h:outputText value="断句 "></h:outputText>
+				<h:outputText value="#{line.verseLine}"></h:outputText>
+				
+				<f:facet name="footer">
+					<p:commandButton value="确定" style="width:100%;margin:10px 0px;background-color:#b35c6f;"></p:commandButton>
+				</f:facet>
+				</p:panelGrid>
+			</p:carousel>
+		</h:form>
+	</ui:define>
+</ui:composition>
+

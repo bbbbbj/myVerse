@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <!-- <navigation-rule>
+        <from-view-id>/petStore/pet/editPet.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>updataPet</from-outcome>
+            <to-view-id>/petStore/pet/updataPet.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule> -->
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
+     <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>reader</from-outcome>
+            <to-view-id>/reader.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>updataReader</from-outcome>
+            <to-view-id>/reader/updataReader.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+         </navigation-rule>
+          <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>addReader</from-outcome>
+            <to-view-id>/reader/addReader.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+         </navigation-rule>
+          <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>editReader</from-outcome>
+            <to-view-id>/reader/editReader.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+         </navigation-rule>
+     <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>line</from-outcome>
+            <to-view-id>/line.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>updataLine</from-outcome>
+            <to-view-id>/line/updataLine.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>addLine</from-outcome>
+            <to-view-id>/line/addLine.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>editLine</from-outcome>
+            <to-view-id>/line/editLine.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
+     <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>poet</from-outcome>
+            <to-view-id>/poet.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>updataPoet</from-outcome>
+            <to-view-id>/poet/updataPoet.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>addPoet</from-outcome>
+            <to-view-id>/poet/addPoet.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>editPoet</from-outcome>
+            <to-view-id>/poet/editPoet.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
+     <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>adminPage</from-outcome>
+            <to-view-id>/adminPage.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
+    <application>
+
+     	   <resource-bundle>
+			<base-name>messages</base-name>
+			<var>msgs</var>
+		</resource-bundle>
+		<locale-config>
+			<default-locale>zh</default-locale>
+			<supported-locale>en</supported-locale>
+		</locale-config>
+    	<!--system-event-listener>
+		<system-event-listener-class>
+			org.javaeerecipes.chapter06.recipe06_08.BookstoreAppListener
+		</system-event-listener-class>
+		<system-event-class>
+			javax.faces.event.PostConstructApplicationEvent
+		</system-event-class>    					
+    	</system-event-listener> 	 
+ 
+        <system-event-listener>
+                <system-event-listener-class>
+                        org.javaeerecipes.chapter06.recipe06_08.BookstoreAppListener
+                </system-event-listener-class>
+                <system-event-class>
+                        javax.faces.event.PreDestroyApplicationEvent
+                </system-event-class>    					
+        </system-event-listener--> 	 
+ 
+    </application>
+    
+        
+    <flow-definition id="exampleFlow">
+    </flow-definition>
+    
+    
+</faces-config>

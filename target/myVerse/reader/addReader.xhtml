@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/templates/template.xhtml" xmlns:p="http://primefaces.org/ui"
+	>
+	<ui:define name="title">读者信息</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+		<h:outputText value="图片："></h:outputText>
+		
+		<p:panelGrid columns="2" bgcolor="#eff5fa" cellspacing="5" frame="box" styleClass="center">
+			<h:outputText value="姓名："></h:outputText>
+			<h:inputText value="#{addReader.name}" required = "true"><f:validateRegex pattern="[\u4e00-\u9fa5]{1,9}" /></h:inputText>
+			
+			<h:outputText value="地址："></h:outputText>
+			<h:inputText value="#{addReader.place}" required = "true"><f:validateRegex pattern="[\u4e00-\u9fa5]{1,9}" /></h:inputText>
+			
+			<h:outputText value="性别："></h:outputText>
+			<h:inputText value="#{addReader.gender}" required = "true"><f:validateRegex pattern="[\u4e00-\u9fa5]{1,9}" /></h:inputText>
+			
+			<h:outputText value="简介："></h:outputText>
+			<h:inputText value="#{addReader.line}" required = "true"><f:validateRegex pattern="[\u4e00-\u9fa5]{1,9}" /></h:inputText>
+			
+			<h:outputText value="电话："></h:outputText>
+			<h:inputText value="#{addReader.tel}" required = "true"><f:validateRegex pattern="[0-9]{11}" /></h:inputText>
+			
+			<h:outputText value="断句："></h:outputText>
+			<h:inputText value="#{addReader.num}" required = "true"><f:validateRegex pattern="[1-9][0-9]*" /></h:inputText>
+			
+			<h:commandButton value = "添加" action = "#{addReader.addReader}"></h:commandButton>
+		</p:panelGrid>
+		
+		</h:form>
+	</ui:define>
+</ui:composition>
+
