@@ -18,7 +18,7 @@ public class Reader implements Serializable{
 	private String line;
 	private String num;
 	@Lob
-	private byte[] pic;+
+	private byte[] pic;
 	
 	public Reader() {
 		// TODO Auto-generated constructor stub
